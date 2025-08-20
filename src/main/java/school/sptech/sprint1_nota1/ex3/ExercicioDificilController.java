@@ -17,17 +17,29 @@ public class ExercicioDificilController {
         valores.add(0);
         valores.add(1);
 
+        int soma = 1;
+
         for(int i = 1; i < n; i++) {
             int ultimoValor = valores.get(valores.size() - 1);
             int penultimoValor = valores.get(valores.size() - 2);
 
             valores.add(penultimoValor + ultimoValor);
+
+            soma += penultimoValor + ultimoValor;
         }
 
         ExercicioDificilResponse response = new ExercicioDificilResponse();
 
+
+        if(n < 0) {
+            response.setEnesimoTermo(0);
+            response.setSoma(0);
+
+            return response;
+        }
+
         response.setEnesimoTermo(valores.get(valores.size() - 1));
-        response.setSoma(0);
+        response.setSoma(soma);
 
         return response;
     }
