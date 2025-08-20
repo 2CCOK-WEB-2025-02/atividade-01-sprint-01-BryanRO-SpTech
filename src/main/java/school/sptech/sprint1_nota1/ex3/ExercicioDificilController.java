@@ -31,7 +31,7 @@ public class ExercicioDificilController {
         ExercicioDificilResponse response = new ExercicioDificilResponse();
 
 
-        if(n < 0) {
+        if(n <= 0) {
             response.setEnesimoTermo(0);
             response.setSoma(0);
 
